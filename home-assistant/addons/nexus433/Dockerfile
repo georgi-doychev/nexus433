@@ -10,8 +10,10 @@ RUN apt-get update && apt-get install -y \
     libmosquittopp-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Clone the repository
+# Clone the aquaticus repository
 RUN git clone https://github.com/aquaticus/nexus433 /nexus433
+# OR 
+# RUN git clone https://github.com/georgi-doychev/nexus433 /nexus433
 
 # Build the project using CMake with the build type defined
 RUN cd /nexus433 && \
