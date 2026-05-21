@@ -1,0 +1,29 @@
+name: "Nexus433 Receiver"
+version: "1.0.0"
+slug: nexus433_receiver
+description: "Nexus433 receiver for 433MHz sensors"
+arch:
+  - aarch64
+privileged:
+  - NET_ADMIN
+  - SYS_RAWIO
+devices:
+  - "/dev/gpiomem:/dev/gpiomem:rwm"
+  - "/dev/gpiochip0:/dev/gpiochip0:rwm"
+startup: services
+entry: /run.sh
+
+# Uncomment this section for the UI configuration
+#options:
+#  host: "core-mosquitto"
+#  port: 1883
+#  user: "mqtt-user"
+#  password: ""
+#  gpio_pin: 17
+
+#schema:
+#  host: "str"
+#  port: "port"
+#  user: "str?"
+#  password: "password?"
+#  gpio_pin: "int"
